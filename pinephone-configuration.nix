@@ -1,0 +1,102 @@
+{ config, pkgs, lib, ... }:
+
+{
+  imports = [
+    (import ./mobile-nixos/lib/configuration.nix { device = "pine64-pinephone"; })
+    ./hardware-configuration.nix
+  ];
+
+  nix = {
+    package = pkgs.nixUnstable;
+    useSandbox = true;
+    extraOptions = ''
+      experimental-features = nix-command flakes ca-derivations
+    '';
+  };
+
+  programs.phosh.enable = true;
+
+  environment.systemPackages = [
+    pkgs.bc
+    pkgs.calls
+    #pkgs.chatty
+    pkgs.cowsay
+    pkgs.exa
+    pkgs.feh
+    pkgs.file
+    pkgs.fzf
+    pkgs.git
+    pkgs.htop
+    pkgs.jq
+    pkgs.kgx
+    #pkgs.nomacs
+    pkgs.megapixels
+    pkgs.onboard
+    pkgs.openssh
+    pkgs.progress
+    pkgs.ripgrep
+    pkgs.rsync
+    pkgs.sgtpuzzles
+    pkgs.screen
+    pkgs.sl
+    pkgs.st
+    pkgs.usbutils
+    pkgs.unzip
+    pkgs.wget
+    pkgs.whois
+    pkgs.tree
+    pkgs.vim
+
+    pkgs.pine64-pinephone.qfirehose
+  ];
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "pinephone-qfirehose"
+  ];
+
+  #programs.sway.enable = true;
+  #programs.xwayland.enable = true;
+
+  # global useDHCP flag is deprecated, let's set it to false
+  networking.useDHCP = false;
+
+  services.xserver = {
+    enable = true;
+    #displayManager.sddm.enable = true;
+    displayManager.gdm.enable = true;
+    #desktopManager.plasma5.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  services.ntp.enable = true;
+  networking.hostName = "pinephone-nixos";
+  #networking.wireless.enable = true;
+  
+  services.openssh.enable = true;
+
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
+
+  hardware.bluetooth.enable = true;
+
+  services.sshd.enable = true;
+
+  networking.interfaces.eth0.useDHCP = true;
+  networking.interfaces.sit0.useDHCP = true;
+  networking.interfaces.wlan0.useDHCP = true;
+
+  powerManagement.enable = true;
+  services.upower.enable = true;
+
+  time.timeZone = "Europe/Amsterdam";
+  
+  users.users.rick = {
+    isNormalUser = true;
+    initialPassword = "";
+    extraGroups = [ "wheel" "networkmanager" "input" "video" "feedbackd" "dialout" ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
+  };
+
+  system.stateVersion = "21.11";
+}
+
