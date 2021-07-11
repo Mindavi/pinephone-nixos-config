@@ -36,7 +36,7 @@
     pkgs.progress
     pkgs.ripgrep
     pkgs.rsync
-    pkgs.sgtpuzzles
+    #pkgs.sgtpuzzles
     pkgs.screen
     pkgs.sl
     pkgs.st
@@ -50,12 +50,16 @@
     pkgs.pine64-pinephone.qfirehose
   ];
 
+  environment.etc."machine-info".text = lib.mkDefault ''
+    CHASSIS="handset"
+  '';
+
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "pinephone-qfirehose"
   ];
 
-  #programs.sway.enable = true;
-  #programs.xwayland.enable = true;
+  programs.sway.enable = true;
+  programs.xwayland.enable = true;
 
   # global useDHCP flag is deprecated, let's set it to false
   networking.useDHCP = false;
@@ -68,9 +72,9 @@
     desktopManager.gnome.enable = true;
   };
 
+  # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)
   services.ntp.enable = true;
   networking.hostName = "pinephone-nixos";
-  #networking.wireless.enable = true;
   
   services.openssh.enable = true;
 
@@ -85,14 +89,26 @@
   networking.interfaces.sit0.useDHCP = true;
   networking.interfaces.wlan0.useDHCP = true;
 
+  networking.firewall.enable = true;
+  networking.firewall.allowedUDPPorts = [
+    # vnc
+    5900
+  ];
+  networking.firewall.allowedTCPPorts = [
+    # vnc
+    5900
+  ];
+
   powerManagement.enable = true;
   services.upower.enable = true;
+
+  hardware.opengl.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
   
   users.users.rick = {
     isNormalUser = true;
-    initialPassword = "";
+    initialPassword = "1234";
     extraGroups = [ "wheel" "networkmanager" "input" "video" "feedbackd" "dialout" ];
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
   };
