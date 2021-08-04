@@ -60,10 +60,14 @@
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "pinephone-qfirehose"
+    "pine64-pinephone-firmware"
   ];
 
-  programs.sway.enable = true;
-  programs.xwayland.enable = true;
+  #programs.sway.enable = true;
+  #programs.xwayland.enable = true;
+
+  hardware.sensor.iio.enable = true;
+  hardware.firmware = [ config.mobile.device.firmware ];
 
   # global useDHCP flag is deprecated, let's set it to false
   networking.useDHCP = false;
@@ -79,6 +83,8 @@
   # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)
   services.ntp.enable = true;
   networking.hostName = "pinephone-nixos";
+
+  services.dbus.packages = [ pkgs.callaudiod ];
   
   services.openssh.enable = true;
 
