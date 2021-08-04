@@ -21,11 +21,13 @@
     pkgs.calls
     #pkgs.chatty
     pkgs.cowsay
-    pkgs.exa
+    #pkgs.exa
     pkgs.feh
     pkgs.file
     pkgs.fzf
     pkgs.git
+    pkgs.gnome.gnome-chess
+    #pkgs.gnome.gnome-podcasts
     pkgs.htop
     pkgs.jq
     pkgs.kgx
@@ -33,12 +35,14 @@
     pkgs.megapixels
     pkgs.onboard
     pkgs.openssh
+    pkgs.portfolio-filemanager
     pkgs.progress
     pkgs.ripgrep
     pkgs.rsync
     #pkgs.sgtpuzzles
     pkgs.screen
     pkgs.sl
+    pkgs.squeekboard
     pkgs.st
     pkgs.usbutils
     pkgs.unzip
