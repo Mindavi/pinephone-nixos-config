@@ -14,12 +14,13 @@
     '';
   };
 
+  documentation.enable = lib.mkOverride 5 true;
   programs.phosh.enable = true;
 
   environment.systemPackages = [
     pkgs.bc
     pkgs.calls
-    #pkgs.chatty
+    pkgs.chatty
     pkgs.cowsay
     #pkgs.exa
     pkgs.feh
@@ -122,6 +123,9 @@
     extraGroups = [ "wheel" "networkmanager" "input" "video" "feedbackd" "dialout" ];
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
   };
+
+  users.users.ntp.group = "ntp";
+  users.groups.ntp = {};
 
   system.stateVersion = "21.11";
 }
