@@ -1,7 +1,9 @@
 {
   description = "Pinephone NixOS config";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  #inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  #inputs.nixpkgs.url = "github:Mindavi/nixpkgs/squeekboard/fix-rust-1.54";
   inputs.mobile-nixos.url = "github:NixOS/mobile-nixos/master";
   inputs.mobile-nixos.flake = false;
 
