@@ -83,6 +83,8 @@
 
   # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)
   services.ntp.enable = true;
+  users.users.ntp.group = "ntp";
+  users.groups.ntp = {};
   networking.hostName = "pinephone-nixos";
 
   services.dbus.packages = [ pkgs.callaudiod ];
@@ -123,9 +125,6 @@
     extraGroups = [ "wheel" "networkmanager" "input" "video" "feedbackd" "dialout" ];
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
   };
-
-  users.users.ntp.group = "ntp";
-  users.groups.ntp = {};
 
   system.stateVersion = "21.11";
 }
