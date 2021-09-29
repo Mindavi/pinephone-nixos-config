@@ -19,6 +19,7 @@
 
   environment.systemPackages = [
     pkgs.bc
+    pkgs.brightnessctl
     pkgs.calls
     pkgs.chatty
     pkgs.cowsay
