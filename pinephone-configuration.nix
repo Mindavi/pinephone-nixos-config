@@ -15,7 +15,10 @@
   };
 
   documentation.enable = lib.mkOverride 5 true;
-  programs.phosh.enable = true;
+  programs.phosh = {
+    enable = true;
+    phocConfig.xwayland = "false";
+  };
 
   environment.systemPackages = [
     pkgs.bc
@@ -65,8 +68,20 @@
     "pine64-pinephone-firmware"
   ];
 
-  #programs.sway.enable = true;
-  #programs.xwayland.enable = true;
+  #programs.sway = {
+  #  enable = true;
+  #  wrapperFeatures.gtk = true;
+  #  extraPackages = with pkgs; [
+  #    swaylock
+  #    swayidle
+  #    wl-clipboard
+  #    mako
+  #    alacritty
+  #    wofi
+  #  ];
+  #};
+
+  #programs.xwayland.enable = false;
 
   hardware.sensor.iio.enable = true;
   hardware.firmware = [ config.mobile.device.firmware ];
@@ -78,6 +93,7 @@
     enable = true;
     #displayManager.sddm.enable = true;
     displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
     #desktopManager.plasma5.enable = true;
     desktopManager.gnome.enable = true;
   };
