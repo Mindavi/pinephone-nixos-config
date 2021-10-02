@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "librem-patches": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1628722670,
+        "narHash": "sha256-4SoRQiTzYH2XfMGJHz6z46rPh06u+RAD56PwBen6JjE=",
+        "owner": "zhaofengli",
+        "repo": "librem-nixos",
+        "rev": "b53062f5b2a44d18fa9b1f3e3c373ef734c177a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zhaofengli",
+        "repo": "librem-nixos",
+        "type": "github"
+      }
+    },
     "mobile-nixos": {
       "flake": false,
       "locked": {
@@ -35,6 +51,7 @@
     },
     "root": {
       "inputs": {
+        "librem-patches": "librem-patches",
         "mobile-nixos": "mobile-nixos",
         "nixpkgs": "nixpkgs"
       }

@@ -1,10 +1,12 @@
-{ config, pkgs, mobile-nixos, lib, ... }:
+{ config, pkgs, mobile-nixos, librem-patches, lib, ... }:
 
 {
   imports = [
     (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
     ./hardware-configuration.nix
   ];
+
+  nixpkgs.overlays = [ (import "${librem-patches}/default.nix") ];
 
   nix = {
     package = pkgs.nixUnstable;
@@ -59,7 +61,7 @@
     pkgs.pine64-pinephone.qfirehose
   ];
 
-  environment.etc."machine-info".text = lib.mkDefault ''
+  environment.etc."machine-info".text = ''
     CHASSIS="handset"
   '';
 
@@ -131,6 +133,13 @@
 
   powerManagement.enable = true;
   services.upower.enable = true;
+
+  system.replaceRuntimeDependencies = [
+    {
+      original = pkgs.gtk3;
+      replacement = pkgs.librem.gtk3;
+    }
+  ];
 
   hardware.opengl.enable = true;
 
