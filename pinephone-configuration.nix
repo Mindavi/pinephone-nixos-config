@@ -6,7 +6,13 @@
     ./hardware-configuration.nix
   ];
 
-  nixpkgs.overlays = [ (import "${librem-patches}/default.nix") ];
+  #nixpkgs.overlays = [ (import "${librem-patches}/default.nix") ];
+  #system.replaceRuntimeDependencies = [
+  #  {
+  #    original = pkgs.gtk3;
+  #    replacement = pkgs.librem.gtk3;
+  #  }
+  #];
 
   nix = {
     package = pkgs.nixUnstable;
@@ -133,13 +139,6 @@
 
   powerManagement.enable = true;
   services.upower.enable = true;
-
-  system.replaceRuntimeDependencies = [
-    {
-      original = pkgs.gtk3;
-      replacement = pkgs.librem.gtk3;
-    }
-  ];
 
   hardware.opengl.enable = true;
 
