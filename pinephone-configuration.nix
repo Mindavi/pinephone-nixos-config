@@ -28,6 +28,9 @@
     phocConfig.xwayland = "false";
   };
 
+  networking.wireless.enable = false;
+  networking.networkmanager.enable = true;
+
   environment.systemPackages = [
     pkgs.bc
     pkgs.brightnessctl
@@ -99,10 +102,15 @@
 
   services.xserver = {
     enable = true;
+
     #displayManager.sddm.enable = true;
+    #desktopManager.plasma5.enable = true;
+    #desktopManager.plasma5.mobile.enable = true;
+    #displayManager.defaultSession = "plasma-mobile";
+    videoDrivers = lib.mkDefault [ "modesetting" "fbdev" ];
+
     displayManager.gdm.enable = true;
     displayManager.gdm.wayland = true;
-    #desktopManager.plasma5.enable = true;
     desktopManager.gnome.enable = true;
   };
 
