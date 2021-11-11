@@ -1,18 +1,10 @@
-{ config, pkgs, mobile-nixos, librem-patches, lib, ... }:
+{ config, pkgs, mobile-nixos, lib, ... }:
 
 {
   imports = [
     (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
     ./hardware-configuration.nix
   ];
-
-  #nixpkgs.overlays = [ (import "${librem-patches}/default.nix") ];
-  #system.replaceRuntimeDependencies = [
-  #  {
-  #    original = pkgs.gtk3;
-  #    replacement = pkgs.librem.gtk3;
-  #  }
-  #];
 
   nix = {
     package = pkgs.nixUnstable;

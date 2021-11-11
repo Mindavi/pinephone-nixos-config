@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "librem-patches": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1628722670,
-        "narHash": "sha256-4SoRQiTzYH2XfMGJHz6z46rPh06u+RAD56PwBen6JjE=",
-        "owner": "zhaofengli",
-        "repo": "librem-nixos",
-        "rev": "b53062f5b2a44d18fa9b1f3e3c373ef734c177a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zhaofengli",
-        "repo": "librem-nixos",
-        "type": "github"
-      }
-    },
     "mobile-nixos": {
       "flake": false,
       "locked": {
@@ -35,23 +19,22 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1635792138,
-        "narHash": "sha256-D79GqaYrwgyM4wvOPbQeKveAHROnVh97F36iSGZO9uA=",
-        "owner": "NixOS",
+        "lastModified": 1635815510,
+        "narHash": "sha256-sEU7eCqUH5Jgbur6nNdHzp+a9uIHea709cFQA1rsIZI=",
+        "owner": "samueldr",
         "repo": "nixpkgs",
-        "rev": "b165ce0c4efbb74246714b5c66b6bcdce8cde175",
+        "rev": "86bfb9ac3173d1af1bb09634a3d995445f296b57",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "samueldr",
+        "ref": "feature/plasma-mobile",
         "repo": "nixpkgs",
-        "rev": "b165ce0c4efbb74246714b5c66b6bcdce8cde175",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "librem-patches": "librem-patches",
         "mobile-nixos": "mobile-nixos",
         "nixpkgs": "nixpkgs"
       }

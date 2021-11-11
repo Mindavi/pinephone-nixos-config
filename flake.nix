@@ -11,16 +11,11 @@
     flake = false;
   };
 
-  inputs.librem-patches = {
-    url = "github:zhaofengli/librem-nixos";
-    flake = false;
-  };
-
-  outputs = { self, nixpkgs, mobile-nixos, librem-patches }: {
+  outputs = { self, nixpkgs, mobile-nixos }: {
     nixosConfigurations.pinephone-nixos = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [ ./pinephone-configuration.nix ];
-      specialArgs = { inherit mobile-nixos librem-patches; };
+      specialArgs = { inherit mobile-nixos; };
     };
   };
 }
