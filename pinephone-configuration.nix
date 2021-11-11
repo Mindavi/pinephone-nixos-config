@@ -15,10 +15,10 @@
   };
 
   documentation.enable = lib.mkOverride 5 true;
-  programs.phosh = {
-    enable = true;
-    phocConfig.xwayland = "false";
-  };
+  #programs.phosh = {
+  #  enable = true;
+  #  phocConfig.xwayland = "false";
+  #};
 
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
@@ -94,16 +94,17 @@
 
   services.xserver = {
     enable = true;
+    libinput.enable = true;
 
-    #displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
     #desktopManager.plasma5.enable = true;
-    #desktopManager.plasma5.mobile.enable = true;
-    #displayManager.defaultSession = "plasma-mobile";
+    desktopManager.plasma5.mobile.enable = true;
+    displayManager.defaultSession = "plasma-mobile";
     videoDrivers = lib.mkDefault [ "modesetting" "fbdev" ];
 
-    displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
-    desktopManager.gnome.enable = true;
+    #displayManager.gdm.enable = true;
+    #displayManager.gdm.wayland = true;
+    #desktopManager.gnome.enable = true;
   };
 
   # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)

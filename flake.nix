@@ -2,8 +2,8 @@
   description = "Pinephone NixOS config";
 
   inputs.nixpkgs = {
-    url = "github:NixOS/nixpkgs/b165ce0c4efbb74246714b5c66b6bcdce8cde175";
-    #url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    url = "github:samueldr/nixpkgs/feature/plasma-mobile";
+    #url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   inputs.mobile-nixos = {
