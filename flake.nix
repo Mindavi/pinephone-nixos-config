@@ -17,6 +17,11 @@
       modules = [ ./pinephone-configuration.nix ];
       specialArgs = { inherit mobile-nixos; };
     };
+    nixosConfigurations.pinephone-nixos-cross = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ ./pinephone-configuration-cross.nix ];
+      specialArgs = { inherit mobile-nixos; };
+    };
   };
 }
 
