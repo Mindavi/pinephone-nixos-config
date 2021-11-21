@@ -3,16 +3,33 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1637311667,
-        "narHash": "sha256-3H7qYqb3ldtuD4RUazgx8Xbw/K56legZNcRcyOOAKfw=",
-        "owner": "betaboon",
+        "lastModified": 1636495462,
+        "narHash": "sha256-N6YC0Lp+IyJbk9EmCSo3nZbautVtHOLhOED99/ptZDU=",
+        "owner": "NixOS",
         "repo": "mobile-nixos",
-        "rev": "f1257420776a4c079725f9543d84517a848ff9bf",
+        "rev": "d858074f0d38fbd6a33195410cf641b0cf27d809",
         "type": "github"
       },
       "original": {
-        "owner": "betaboon",
-        "ref": "fix/pinephone-uboot-2021.10",
+        "owner": "NixOS",
+        "ref": "master",
+        "repo": "mobile-nixos",
+        "type": "github"
+      }
+    },
+    "mobile-nixos-cross": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1637527126,
+        "narHash": "sha256-FtTIgvMWmrJmY4nUGETnn/8m45T0Lrpc2BKV7I8Qufw=",
+        "owner": "Mindavi",
+        "repo": "mobile-nixos",
+        "rev": "f180a3978c3ba2bd6d9272119734fff5ecff9dff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mindavi",
+        "ref": "wip-pinephone",
         "repo": "mobile-nixos",
         "type": "github"
       }
@@ -33,10 +50,28 @@
         "type": "github"
       }
     },
+    "nixpkgs-cross": {
+      "locked": {
+        "lastModified": 1637474478,
+        "narHash": "sha256-8ICXMbJ2nxLuAZ7lhblsT1j7O75mgwssLzn0ABShpJA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6ad93ecdbb115566d66b7a04b914e7ac3d780cd9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "6ad93ecdbb115566d66b7a04b914e7ac3d780cd9",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "mobile-nixos": "mobile-nixos",
-        "nixpkgs": "nixpkgs"
+        "mobile-nixos-cross": "mobile-nixos-cross",
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-cross": "nixpkgs-cross"
       }
     }
   },
