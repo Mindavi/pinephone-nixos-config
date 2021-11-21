@@ -24,8 +24,7 @@
   # May break proper audio from pulseaudio -- to check
   security.rtkit.enable = lib.mkForce false;
 
-
-  #documentation.enable = lib.mkOverride 5 true;
+  documentation.enable = lib.mkOverride 5 true;
   networking.wireless.enable = false;
   #networking.networkmanager.enable = true;
 
@@ -45,7 +44,7 @@
     pkgs.screen
     pkgs.sl
     #pkgs.squeekboard
-    #pkgs.st
+    pkgs.st
     pkgs.usbutils
     pkgs.unzip
     pkgs.wget
@@ -53,7 +52,7 @@
     pkgs.tree
     pkgs.vim
 
-    #pkgs.pine64-pinephone.qfirehose
+    pkgs.pine64-pinephone.qfirehose
   ];
 
   environment.etc."machine-info".text = ''
@@ -96,12 +95,10 @@
 
   services.openssh.enable = true;
 
-  #sound.enable = true;
-  #hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
-  #hardware.bluetooth.enable = true;
-
-  services.sshd.enable = true;
+  hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.sit0.useDHCP = true;
@@ -120,6 +117,7 @@
   powerManagement.enable = true;
   services.upower.enable = true;
 
+  # disable to exclude mesa from the closure
   #hardware.opengl.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
