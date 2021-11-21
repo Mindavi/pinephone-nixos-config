@@ -7,7 +7,8 @@
   };
 
   inputs.mobile-nixos = {
-    url = "github:NixOS/mobile-nixos/master";
+    #url = "github:NixOS/mobile-nixos/master";
+    url = "github:betaboon/mobile-nixos/fix/pinephone-uboot-2021.10";
     flake = false;
   };
 
