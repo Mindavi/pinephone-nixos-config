@@ -3,7 +3,7 @@
 {
   imports = [
     (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
-    ./hardware-configuration.nix
+    ./hardware-configuration-cross.nix
   ];
 
   nix = {
@@ -12,6 +12,11 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
+  };
+
+  mobile.generatedFilesystems.rootfs = lib.mkDefault {
+    label = lib.mkForce "nixos-cross"; # explicitly different to prevent from booting from sd card into eMMC installed OS
+    # I don't think there's any need to change the id.
   };
 
   nixpkgs = {
