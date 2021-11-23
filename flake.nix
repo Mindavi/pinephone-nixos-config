@@ -7,7 +7,8 @@
   };
 
   inputs.nixpkgs-cross = {
-    url = "github:NixOS/nixpkgs/6ad93ecdbb115566d66b7a04b914e7ac3d780cd9";
+    #url = "github:NixOS/nixpkgs/6ad93ecdbb115566d66b7a04b914e7ac3d780cd9";
+    url = "github:Mindavi/nixpkgs/pinephone-patches-3";
   };
 
   inputs.mobile-nixos = {

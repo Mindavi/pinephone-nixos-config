@@ -52,17 +52,17 @@
     },
     "nixpkgs-cross": {
       "locked": {
-        "lastModified": 1637474478,
-        "narHash": "sha256-8ICXMbJ2nxLuAZ7lhblsT1j7O75mgwssLzn0ABShpJA=",
-        "owner": "NixOS",
+        "lastModified": 1637694639,
+        "narHash": "sha256-B3wMPZUC1HmsT9nNp8xhv+s95/eCWqhz4jagmBtevbU=",
+        "owner": "Mindavi",
         "repo": "nixpkgs",
-        "rev": "6ad93ecdbb115566d66b7a04b914e7ac3d780cd9",
+        "rev": "ff38f8b79e4438f15a7be6febaa4e7d79bfd78fc",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "Mindavi",
+        "ref": "pinephone-patches-3",
         "repo": "nixpkgs",
-        "rev": "6ad93ecdbb115566d66b7a04b914e7ac3d780cd9",
         "type": "github"
       }
     },

@@ -20,7 +20,7 @@
   };
 
   nixpkgs = {
-    #config.contentAddressedByDefault = true;
+    config.contentAddressedByDefault = true;
   };
 
   # required for cross-compilation
@@ -69,18 +69,18 @@
     "pine64-pinephone-firmware"
   ];
 
-  #programs.sway = {
-  #  enable = true;
-  #  wrapperFeatures.gtk = true;
-  #  extraPackages = with pkgs; [
-  #    swaylock
-  #    swayidle
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [
+      swaylock
+      swayidle
   #    wl-clipboard
   #    mako
   #    alacritty
-  #    wofi
-  #  ];
-  #};
+      wofi
+    ];
+  };
 
   #programs.xwayland.enable = false;
 
@@ -96,7 +96,7 @@
   users.groups.ntp = {};
   networking.hostName = "pinephone-nixos";
 
-  #services.dbus.packages = [ pkgs.callaudiod ];  # cross-compilation broken
+  services.dbus.packages = [ pkgs.callaudiod ];  # cross-compilation broken
 
   services.openssh.enable = true;
 
@@ -123,7 +123,7 @@
   services.upower.enable = true;
 
   # disable to exclude mesa from the closure
-  #hardware.opengl.enable = true;
+  hardware.opengl.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
 
