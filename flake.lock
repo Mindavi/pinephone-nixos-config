@@ -52,11 +52,11 @@
     },
     "nixpkgs-cross": {
       "locked": {
-        "lastModified": 1637694639,
-        "narHash": "sha256-B3wMPZUC1HmsT9nNp8xhv+s95/eCWqhz4jagmBtevbU=",
+        "lastModified": 1637696343,
+        "narHash": "sha256-Gzn5fWEdNmueUhvkRIk+qhDaD4F1vgoSusyAyy2paPE=",
         "owner": "Mindavi",
         "repo": "nixpkgs",
-        "rev": "ff38f8b79e4438f15a7be6febaa4e7d79bfd78fc",
+        "rev": "8bfd4050c58758349cdb13d9ddf6682f8da4b614",
         "type": "github"
       },
       "original": {

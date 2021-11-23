@@ -24,7 +24,7 @@
   };
 
   # required for cross-compilation
-  #security.polkit.enable = lib.mkForce true;
+  security.polkit.enable = lib.mkForce true;
   #services.udisks2.enable = lib.mkForce true;
   # May break proper audio from pulseaudio -- to check
   security.rtkit.enable = lib.mkForce false;
