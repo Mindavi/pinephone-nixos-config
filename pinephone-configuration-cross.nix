@@ -26,8 +26,8 @@
   # required for cross-compilation
   security.polkit.enable = lib.mkForce true;
   #services.udisks2.enable = lib.mkForce true;
-  # May break proper audio from pulseaudio -- to check
-  security.rtkit.enable = lib.mkForce false;
+  # May break proper audio from pulseaudio -- to check (required when cross-compiling polkit fails)
+  #security.rtkit.enable = lib.mkForce false;
 
   documentation.enable = lib.mkOverride 5 true;
   networking.wireless.enable = false;
@@ -78,6 +78,7 @@
   #    wl-clipboard
   #    mako
   #    alacritty
+      dmenu
       wofi
     ];
   };
