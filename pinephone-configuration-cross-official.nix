@@ -29,7 +29,7 @@
   # May break proper audio from pulseaudio -- to check
   security.rtkit.enable = lib.mkForce false;
 
-  documentation.enable = lib.mkOverride 5 true;
+  #documentation.enable = lib.mkOverride 5 true;  # breaks mobile-nixos imports
   networking.wireless.enable = false;
   #networking.networkmanager.enable = true;
 
