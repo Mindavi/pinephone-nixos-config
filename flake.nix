@@ -1,35 +1,32 @@
 {
   description = "Pinephone NixOS config";
 
-  inputs.nixpkgs = {
-    url = "github:samueldr/nixpkgs/feature/plasma-mobile";
-    #url = "github:NixOS/nixpkgs/nixos-unstable";
+  inputs = {
+    nixpkgs.url = "github:samueldr/nixpkgs/feature/plasma-mobile";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    nixpkgs-cross-official.url = "github:NixOS/nixpkgs/master";
+    nixpkgs-cross-fork.url = "github:Mindavi/nixpkgs/pinephone-patches-3";
+
+    mobile-nixos.flake = false;
+    mobile-nixos.url = "github:NixOS/mobile-nixos/master";
   };
 
-  inputs.nixpkgs-cross = {
-    url = "github:NixOS/nixpkgs/master";
-  };
-
-  inputs.mobile-nixos = {
-    url = "github:NixOS/mobile-nixos/master";
-    flake = false;
-  };
-
-  inputs.mobile-nixos-cross = {
-    url = "github:Mindavi/mobile-nixos/wip-pinephone";
-    flake = false;
-  };
-
-  outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross, mobile-nixos-cross }: {
+  outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross-official, nixpkgs-cross-fork }: {
     nixosConfigurations.pinephone-nixos = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [ ./pinephone-configuration.nix ];
       specialArgs = { inherit mobile-nixos; };
     };
-    nixosConfigurations.pinephone-nixos-cross = nixpkgs-cross.lib.nixosSystem {
+    nixosConfigurations.pinephone-nixos-cross-official = nixpkgs-cross-official.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./pinephone-configuration-cross.nix ];
-      specialArgs = { mobile-nixos = mobile-nixos-cross; };
+      modules = [ ./pinephone-configuration-cross-official.nix ];
+      specialArgs = { inherit mobile-nixos; };
+    };
+    nixosConfigurations.pinephone-nixos-cross-fork = nixpkgs-cross-fork.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [ ./pinephone-configuration-cross-fork.nix ];
+      specialArgs = { inherit mobile-nixos; };
     };
   };
 }

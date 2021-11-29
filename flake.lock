@@ -3,33 +3,16 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1636495462,
-        "narHash": "sha256-N6YC0Lp+IyJbk9EmCSo3nZbautVtHOLhOED99/ptZDU=",
+        "lastModified": 1637912065,
+        "narHash": "sha256-6wrG5b4JETC68M18EIqf1gnkEi22lovfI5VGNnIW2T8=",
         "owner": "NixOS",
         "repo": "mobile-nixos",
-        "rev": "d858074f0d38fbd6a33195410cf641b0cf27d809",
+        "rev": "4bfe1465eddecfcf081bf42ef1e21aeaeeb981ec",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "master",
-        "repo": "mobile-nixos",
-        "type": "github"
-      }
-    },
-    "mobile-nixos-cross": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1637527126,
-        "narHash": "sha256-FtTIgvMWmrJmY4nUGETnn/8m45T0Lrpc2BKV7I8Qufw=",
-        "owner": "Mindavi",
-        "repo": "mobile-nixos",
-        "rev": "f180a3978c3ba2bd6d9272119734fff5ecff9dff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mindavi",
-        "ref": "wip-pinephone",
         "repo": "mobile-nixos",
         "type": "github"
       }
@@ -50,13 +33,29 @@
         "type": "github"
       }
     },
-    "nixpkgs-cross": {
+    "nixpkgs-cross-fork": {
       "locked": {
-        "lastModified": 1637696765,
-        "narHash": "sha256-zKEN5rRNif6E3D+wXtdn+78Sc3vctEQQmTNGi/XGnPw=",
+        "lastModified": 1638118263,
+        "narHash": "sha256-1juJz2o9WtL0sh/kZ5mrGN6ApMVyiutZjywLiWVuZ1w=",
+        "owner": "Mindavi",
+        "repo": "nixpkgs",
+        "rev": "ae908e8e8262c31e82542d92da9f84ddad7b943d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mindavi",
+        "ref": "pinephone-patches-3",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-cross-official": {
+      "locked": {
+        "lastModified": 1638209503,
+        "narHash": "sha256-ASrblpNCOvFzfSbv2G3tCCELUhxMkckILIBWOHLQcVQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b5d11d62a3ee454acd8ce4cc7ad7040b3d9672fc",
+        "rev": "fd7d76bfb61dfa4c5b40bf805b4c1209df807d25",
         "type": "github"
       },
       "original": {
@@ -69,9 +68,9 @@
     "root": {
       "inputs": {
         "mobile-nixos": "mobile-nixos",
-        "mobile-nixos-cross": "mobile-nixos-cross",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-cross": "nixpkgs-cross"
+        "nixpkgs-cross-fork": "nixpkgs-cross-fork",
+        "nixpkgs-cross-official": "nixpkgs-cross-official"
       }
     }
   },
