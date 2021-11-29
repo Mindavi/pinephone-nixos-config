@@ -1,8 +1,7 @@
-{ config, pkgs, mobile-nixos, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports = [
-    (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
     ./hardware-configuration-cross.nix
   ];
 

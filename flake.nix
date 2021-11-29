@@ -20,13 +20,17 @@
     };
     nixosConfigurations.pinephone-nixos-cross-official = nixpkgs-cross-official.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./pinephone-configuration-cross-official.nix ];
-      specialArgs = { inherit mobile-nixos; };
+      modules = [
+        ./pinephone-configuration-cross-official.nix
+        (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
+      ];
     };
     nixosConfigurations.pinephone-nixos-cross-fork = nixpkgs-cross-fork.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [ ./pinephone-configuration-cross-fork.nix ];
-      specialArgs = { inherit mobile-nixos; };
+      modules = [
+        ./pinephone-configuration-cross-fork.nix
+        (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
+      ];
     };
   };
 }
