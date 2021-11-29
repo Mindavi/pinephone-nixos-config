@@ -6,22 +6,21 @@ let
   mobileReleaseTools = (import <mobile/lib/release-tools.nix> {
     pkgs = pkgs';
   });
-  #inherit (mobileReleaseTools.withPkgs pkgs') evalWithConfiguration;
 
-  pp-config = (mobileReleaseTools.evalWith {
+  pp-config-official = (mobileReleaseTools.evalWith {
     modules = [ ./pinephone-configuration-cross-official.nix ];
     device = "pine64-pinephone";
   });
 
-  pp-config2 = import <mobile/lib/eval-with-configuration.nix> ({
-    pkgs = pkgs';
-    configuration = [ ./pinephone-configuration-cross-official.nix ];
+  pp-config-fork = (mobileReleaseTools.evalWith {
+    modules = [ ./pinephone-configuration-cross-fork.nix ];
     device = "pine64-pinephone";
   });
 
 in {
-  bareConfig = pp-config;
-  image = pp-config.config.mobile.outputs.default;
-  image2 = pp-config2.config.mobile.outputs.default;
+  official = pp-config-official;
+  official-image = pp-config-official.config.mobile.outputs.default;
+  fork = pp-config-fork;
+  fork-image = pp-config-fork.config.mobile.outputs.default;
 }
 
