@@ -26,9 +26,9 @@ let
   });
 
 in {
-  official = pp-config-official;
+  #official = pp-config-official;
   official-image = pp-config-official.config.mobile.outputs.default;
-  fork = pp-config-fork;
+  #fork = pp-config-fork;
   fork-image = pp-config-fork.config.mobile.outputs.default;
   normal-image = pp-config-normal-eval.config.mobile.outputs.default;
 }
