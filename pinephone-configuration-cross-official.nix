@@ -18,10 +18,6 @@
     # I don't think there's any need to change the id.
   };
 
-  nixpkgs = {
-    #config.contentAddressedByDefault = true;
-  };
-
   # required for cross-compilation
   #security.polkit.enable = lib.mkForce true;
   #services.udisks2.enable = lib.mkForce true;

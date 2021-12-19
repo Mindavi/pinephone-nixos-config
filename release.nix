@@ -1,9 +1,6 @@
 { ... }:
 let
-  pkgs' = (import <nixpkgs> {
-    config.contentAddressedByDefault = true;
-    overlays = [ (import ./overlay.nix) ];
-  });
+  pkgs' = (import <nixpkgs> {});
   mobileReleaseTools = (import <mobile/lib/release-tools.nix> {
     pkgs = pkgs';
   });
