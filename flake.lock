@@ -3,16 +3,16 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1640650371,
-        "narHash": "sha256-dJPS507lpYPpQKKchx+B52rnOO0oXZ3fWu+nAG6EK2A=",
-        "owner": "NixOS",
+        "lastModified": 1643836366,
+        "narHash": "sha256-s3zUpRdOTCxKNUyYBQpqWKZ8Q8rcurs3pe0eAtCHFSs=",
+        "owner": "tomfitzhenry",
         "repo": "mobile-nixos",
-        "rev": "8a105e177632f0fbc4ca28ee0195993baf0dcf9a",
+        "rev": "b726c0e35b3ac9ff3b0127ceecb7e064c1162bd5",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "owner": "tomfitzhenry",
+        "ref": "pinephone-kernel-5.15",
         "repo": "mobile-nixos",
         "type": "github"
       }
@@ -51,11 +51,11 @@
     },
     "nixpkgs-cross-official": {
       "locked": {
-        "lastModified": 1645036967,
-        "narHash": "sha256-M3n0pUl4f77mjy5SiiQIqhdQlymQFyPgK49dK/vQNf0=",
+        "lastModified": 1645130484,
+        "narHash": "sha256-JToJHgPAto5aYWYmtcHc9xJ7d5/gjMTruyhUbL1FhqM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4c999b91a5fdef78c71d22cefedd4eac34aff5a7",
+        "rev": "9a688b90d15f09a93f8e69d6e153dbdc4d78e7cc",
         "type": "github"
       },
       "original": {

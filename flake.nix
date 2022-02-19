@@ -9,7 +9,8 @@
     nixpkgs-cross-fork.url = "github:Mindavi/nixpkgs/pinephone-patches-3";
 
     mobile-nixos.flake = false;
-    mobile-nixos.url = "github:NixOS/mobile-nixos/master";
+    #mobile-nixos.url = "github:NixOS/mobile-nixos/master";
+    mobile-nixos.url = "github:tomfitzhenry/mobile-nixos/pinephone-kernel-5.15";
   };
 
   outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross-official, nixpkgs-cross-fork }: {
