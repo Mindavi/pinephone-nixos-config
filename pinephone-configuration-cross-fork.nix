@@ -19,7 +19,7 @@
   };
 
   nixpkgs = {
-    config.contentAddressedByDefault = true;
+    #config.contentAddressedByDefault = true;
   };
 
   # required for cross-compilation
