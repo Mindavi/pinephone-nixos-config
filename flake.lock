@@ -3,16 +3,16 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1643836366,
-        "narHash": "sha256-s3zUpRdOTCxKNUyYBQpqWKZ8Q8rcurs3pe0eAtCHFSs=",
+        "lastModified": 1647148332,
+        "narHash": "sha256-RR21At5dAFHK1pVxHOmnD6+5y6UDgqaLRcGtHMgyXFs=",
         "owner": "tomfitzhenry",
         "repo": "mobile-nixos",
-        "rev": "b726c0e35b3ac9ff3b0127ceecb7e064c1162bd5",
+        "rev": "3af9d9a3142e8d89f2e9f9dde90d7bf250c421e3",
         "type": "github"
       },
       "original": {
         "owner": "tomfitzhenry",
-        "ref": "pinephone-kernel-5.15",
+        "ref": "pine64-pinephone-kernel-5.17",
         "repo": "mobile-nixos",
         "type": "github"
       }

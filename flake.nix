@@ -10,7 +10,7 @@
 
     mobile-nixos.flake = false;
     #mobile-nixos.url = "github:NixOS/mobile-nixos/master";
-    mobile-nixos.url = "github:tomfitzhenry/mobile-nixos/pinephone-kernel-5.15";
+    mobile-nixos.url = "github:tomfitzhenry/mobile-nixos/pine64-pinephone-kernel-5.17";
   };
 
   outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross-official, nixpkgs-cross-fork }: {
