@@ -69,6 +69,7 @@
   '';
 
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "arm-trusted-firmware-sun50i_a64"
     "pinephone-qfirehose"
     "pine64-pinephone-firmware"
   ];
