@@ -35,11 +35,11 @@
     },
     "nixpkgs-cross-fork": {
       "locked": {
-        "lastModified": 1650437235,
-        "narHash": "sha256-kAOo3M7gru+2zRc+z6xndoLGLlObQBjubvADLiy6Dvo=",
+        "lastModified": 1650489117,
+        "narHash": "sha256-9Flf0mmwQStdfGeu2aOPISraqP0crgiomxKbFdr/elk=",
         "owner": "Mindavi",
         "repo": "nixpkgs",
-        "rev": "7e60a0f139c434997d477278e7308dc47cc7d3d3",
+        "rev": "1e7d9725678c6ac76c325dfe4b9d921f283c987f",
         "type": "github"
       },
       "original": {
