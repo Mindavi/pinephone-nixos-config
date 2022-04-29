@@ -65,7 +65,25 @@
     pkgs.vim
 
     pkgs.pine64-pinephone.qfirehose
-  ];
+  ] ++ (with pkgs.plasma5Packages; [
+    alligator
+    angelfish
+    audiotube
+    calindori
+    kalk
+    kasts
+    kclock
+    keysmith
+    koko
+    krecorder
+    ktrip
+    # kweather build is broken
+    #kweather
+    plasma-dialer
+    plasma-phonebook
+    plasma-settings
+    spacebar
+  ]);
 
   environment.etc."machine-info".text = ''
     CHASSIS="handset"
@@ -105,6 +123,8 @@
     displayManager.sddm.enable = true;
     #desktopManager.plasma5.enable = true;
     desktopManager.plasma5.mobile.enable = true;
+    # kweather build broken, preventing update
+    desktopManager.plasma5.mobile.installRecommendedSoftware = false;
     displayManager.defaultSession = "plasma-mobile";
     videoDrivers = lib.mkDefault [ "modesetting" "fbdev" ];
 
