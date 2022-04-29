@@ -15,6 +15,12 @@ let
     device = "pine64-pinephone";
   });
 
+  # nixos config actually used on pinephone. ('final image')
+  pp-config-actual = (mobileReleaseTools.evalWith {
+    modules = [ ./pinephone-configuration.nix ];
+    device = "pine64-pinephone";
+  });
+
   pp-config-normal-eval = (import <nixpkgs/nixos/lib/eval-config.nix> {
     system = "x86_64-linux";
     modules = [
@@ -29,5 +35,6 @@ in {
   #fork = pp-config-fork;
   fork-image = pp-config-fork.config.mobile.outputs.default;
   normal-image = pp-config-normal-eval.config.mobile.outputs.default;
+  actual-image = pp-config-actual.config.mobile.outputs.default;
 }
 
