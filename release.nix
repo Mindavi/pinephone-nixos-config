@@ -35,6 +35,6 @@ in {
   #fork = pp-config-fork;
   fork-image = pp-config-fork.config.mobile.outputs.default;
   normal-image = pp-config-normal-eval.config.mobile.outputs.default;
-  actual-image = pp-config-actual.config.mobile.outputs.default;
+  #actual-image = pp-config-actual.config.mobile.outputs.default;
 }
 
