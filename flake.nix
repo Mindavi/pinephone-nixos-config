@@ -2,7 +2,8 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:tomfitzhenry/nixpkgs/phosh-service";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     #nixpkgs.url = "github:NixOS/nixpkgs/98bb5b77c8c6666824a4c13d23befa1e07210ef1";
 
     nixpkgs-cross-official.url = "github:NixOS/nixpkgs/master";
