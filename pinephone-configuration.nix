@@ -31,7 +31,7 @@
   environment.systemPackages = [
     pkgs.bc
     pkgs.brightnessctl
-    pkgs.calls
+    #pkgs.calls
     pkgs.chatty
     pkgs.cowsay
     #pkgs.exa
@@ -107,6 +107,8 @@
   #    wofi
   #  ];
   #};
+
+  programs.calls.enable = true;
 
   #programs.xwayland.enable = false;
 
