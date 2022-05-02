@@ -51,11 +51,11 @@
     },
     "nixpkgs-cross-official": {
       "locked": {
-        "lastModified": 1651173262,
-        "narHash": "sha256-9ylujG8QQRGGlwJNM+wEvzWb7nSWFtL9q8MSwaZy4m8=",
+        "lastModified": 1651472756,
+        "narHash": "sha256-5pbd+LCcakKTnB8Ev9aYJoNjA0eo9WmM8hE9Q0FALOU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4ee88025c2e84139b42d44e9e1c1746c0e0e538d",
+        "rev": "76599d5f1d6f2a7c72cee1d3575c038ff28ab30e",
         "type": "github"
       },
       "original": {
