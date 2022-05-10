@@ -23,12 +23,6 @@
   networking.wireless.enable = false;
   networking.networkmanager.enable = true;
 
-  # Needs a fix in the checkPhase to cross-compile properly.
-  # logrotate.conf> /build/.attr-0l2nkwhif96f51f4amnlf414lhl4rv9vh8iffyp431v6s28gsr90: line 14: /nix/store/yvknva89jx34vw6ix9f03ny4nrymhvfc-coreutils-aarch64-unknown-linux-gnu-9.0/bin/id: cannot execute binary file: Exec format error
-  # error: builder for '/nix/store/3c3s3afzxj31csa07506fy74sapk3bif-logrotate.conf.drv' failed with exit code 126;
-  # note: fixed by https://github.com/NixOS/nixpkgs/pull/166992
-  #services.logrotate.checkConfig = false;
-
   environment.systemPackages = [
     pkgs.bc
     pkgs.brightnessctl
@@ -83,7 +77,8 @@
     plasma-dialer
     plasma-phonebook
     plasma-settings
-    spacebar
+    # qcoro marked broken for aarch64
+    # spacebar
   ]);
 
   environment.etc."machine-info".text = ''
@@ -119,10 +114,23 @@
   # global useDHCP flag is deprecated, let's set it to false
   networking.useDHCP = false;
 
-  services.xserver.desktopManager.phosh = {
-    enable = true;
-    user = "rick";
-    group = "users";
+  services.xserver = {
+    desktopManager = {
+      #phosh = {
+      #  enable = true;
+      #  user = "rick";
+      #  group = "users";
+      #};
+      plasma5.mobile = {
+        enable = true;
+        # kweather build broken, spacebar build broken
+        installRecommendedSoftware = false;
+      };
+    };
+    displayManager = {
+      defaultSession = "plasma-mobile";
+    };
+    videoDrivers = lib.mkDefault [ "modesetting" "fbdev" ];
   };
 
   # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)
