@@ -19,16 +19,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1646399351,
-        "narHash": "sha256-c6M8UXRBDqMisbxFLvn+Xub58eqtZ6doed0djnNwOds=",
-        "owner": "tomfitzhenry",
+        "lastModified": 1652161586,
+        "narHash": "sha256-pzyvJ0glrQ+zDicwjWA20Ph9HMOagpwYkGbU3ZV00ps=",
+        "owner": "dotlambda",
         "repo": "nixpkgs",
-        "rev": "ccf99f32ebe37d8093acb647a07926b7a54d5c10",
+        "rev": "cb0ed5167c7141553872d0f7eeeeb4981833f22d",
         "type": "github"
       },
       "original": {
-        "owner": "tomfitzhenry",
-        "ref": "phosh-service",
+        "owner": "dotlambda",
+        "ref": "plasma-mobile-gear-21.12",
         "repo": "nixpkgs",
         "type": "github"
       }
