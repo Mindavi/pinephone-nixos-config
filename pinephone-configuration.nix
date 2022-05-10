@@ -63,7 +63,7 @@
   ] ++ (with pkgs.plasma5Packages; [
     alligator
     angelfish
-    audiotube
+    #audiotube # build broken, cannot find <span> include
     calindori
     kalk
     kasts
