@@ -3,11 +3,11 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1647148332,
-        "narHash": "sha256-RR21At5dAFHK1pVxHOmnD6+5y6UDgqaLRcGtHMgyXFs=",
+        "lastModified": 1651851359,
+        "narHash": "sha256-Jh83w+gKjl9XS45SirPuvoavT7BhLcX7tvL58vdlHkM=",
         "owner": "tomfitzhenry",
         "repo": "mobile-nixos",
-        "rev": "3af9d9a3142e8d89f2e9f9dde90d7bf250c421e3",
+        "rev": "2cdeca4b08081b0fadb04a26b3b95961f51ccdfe",
         "type": "github"
       },
       "original": {
@@ -35,11 +35,11 @@
     },
     "nixpkgs-cross-fork": {
       "locked": {
-        "lastModified": 1650489117,
-        "narHash": "sha256-9Flf0mmwQStdfGeu2aOPISraqP0crgiomxKbFdr/elk=",
+        "lastModified": 1652159416,
+        "narHash": "sha256-47wgF/L3/7Wry+czQO3AnfAk1cuod1ht6BYTjE22XRU=",
         "owner": "Mindavi",
         "repo": "nixpkgs",
-        "rev": "1e7d9725678c6ac76c325dfe4b9d921f283c987f",
+        "rev": "85a61dcd88f2e4145785bb756b79eaac85d03530",
         "type": "github"
       },
       "original": {
@@ -51,11 +51,11 @@
     },
     "nixpkgs-cross-official": {
       "locked": {
-        "lastModified": 1651472756,
-        "narHash": "sha256-5pbd+LCcakKTnB8Ev9aYJoNjA0eo9WmM8hE9Q0FALOU=",
+        "lastModified": 1652203585,
+        "narHash": "sha256-n27cPWhceZ+fwTIcy4xzK/gCKO7c9hqksF9/3onCuYk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "76599d5f1d6f2a7c72cee1d3575c038ff28ab30e",
+        "rev": "271905a33f9b755dc63620b7a5040ebde8e3f83c",
         "type": "github"
       },
       "original": {
