@@ -27,7 +27,7 @@
     pkgs.bc
     pkgs.brightnessctl
     #pkgs.calls
-    pkgs.chatty
+    #pkgs.chatty
     pkgs.cowsay
     #pkgs.exa
     pkgs.feh
@@ -62,7 +62,7 @@
     pkgs.pine64-pinephone.qfirehose
   ] ++ (with pkgs.plasma5Packages; [
     alligator
-    angelfish
+    #angelfish
     #audiotube # build broken, cannot find <span> include
     calindori
     kalk
