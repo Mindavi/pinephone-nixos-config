@@ -7,7 +7,7 @@
   ];
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.unstable;
     settings.sandbox = true;
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -115,6 +115,7 @@
   networking.useDHCP = false;
 
   services.xserver = {
+    enable = true;
     desktopManager = {
       #phosh = {
       #  enable = true;
@@ -129,6 +130,7 @@
     };
     displayManager = {
       defaultSession = "plasma-mobile";
+      sddm.enable = true;
     };
     videoDrivers = lib.mkDefault [ "modesetting" "fbdev" ];
   };
