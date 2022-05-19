@@ -85,6 +85,9 @@
     CHASSIS="handset"
   '';
 
+  # Fix issues with pkgconfig in mobile-nixos (maybe there are others too?)
+  # then set allowAliases to `false`.
+  nixpkgs.config.allowAliases = true;
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "arm-trusted-firmware-sun50i_a64"
     "pinephone-qfirehose"
