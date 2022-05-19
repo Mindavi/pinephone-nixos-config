@@ -2,8 +2,7 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:dotlambda/nixpkgs/plasma-mobile-gear-21.12";
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     nixpkgs-cross-official.url = "github:NixOS/nixpkgs/master";
     nixpkgs-cross-fork.url = "github:Mindavi/nixpkgs/pinephone-patches-3";

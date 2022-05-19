@@ -19,16 +19,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1652161586,
-        "narHash": "sha256-pzyvJ0glrQ+zDicwjWA20Ph9HMOagpwYkGbU3ZV00ps=",
-        "owner": "dotlambda",
+        "lastModified": 1652794215,
+        "narHash": "sha256-erVj41IcCPDWdt8CwT60ygD+SY/uhqip3RXwiESOCVk=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "cb0ed5167c7141553872d0f7eeeeb4981833f22d",
+        "rev": "242efdc5a5aff8222c1152c0e4b9262bd02915b6",
         "type": "github"
       },
       "original": {
-        "owner": "dotlambda",
-        "ref": "plasma-mobile-gear-21.12",
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -51,11 +51,11 @@
     },
     "nixpkgs-cross-official": {
       "locked": {
-        "lastModified": 1652203585,
-        "narHash": "sha256-n27cPWhceZ+fwTIcy4xzK/gCKO7c9hqksF9/3onCuYk=",
+        "lastModified": 1652995310,
+        "narHash": "sha256-9RHq6Gg/S7w4z7iQgyEeqrfSCSOm2w4X9BBYZDVhjY8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "271905a33f9b755dc63620b7a5040ebde8e3f83c",
+        "rev": "35de448c4530c562bfd0d1c2a2d0bf76d1d4e468",
         "type": "github"
       },
       "original": {
