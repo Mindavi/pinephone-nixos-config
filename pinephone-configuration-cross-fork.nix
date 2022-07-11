@@ -7,7 +7,7 @@
 
   nix = {
     package = pkgs.nixUnstable;
-    useSandbox = true;
+    settings.sandbox = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

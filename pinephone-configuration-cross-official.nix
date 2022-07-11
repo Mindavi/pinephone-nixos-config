@@ -6,8 +6,10 @@
   ];
 
   nix = {
+    settings = {
+      sandbox = true;
+    };
     package = pkgs.nixUnstable;
-    useSandbox = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
