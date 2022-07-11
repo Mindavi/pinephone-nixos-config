@@ -2,24 +2,20 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/17c252aab1772d36acd6d3f57f6512f25b6f9e9c";
-
-    nixpkgs-cross-official.url = "github:NixOS/nixpkgs/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nixpkgs-cross-fork.url = "github:Mindavi/nixpkgs/pinephone-patches-3";
 
     mobile-nixos.flake = false;
-    #mobile-nixos.url = "github:NixOS/mobile-nixos/master";
-    mobile-nixos.url = "github:tomfitzhenry/mobile-nixos/pine64-pinephone-kernel-5.17";
+    mobile-nixos.url = "github:NixOS/mobile-nixos/master";
   };
 
-  outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross-official, nixpkgs-cross-fork }: {
+  outputs = { self, nixpkgs, mobile-nixos, nixpkgs-cross-fork }: {
     nixosConfigurations.pinephone-nixos = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [ ./pinephone-configuration.nix ];
       specialArgs = { inherit mobile-nixos; };
     };
-    nixosConfigurations.pinephone-nixos-cross-official = nixpkgs-cross-official.lib.nixosSystem {
+    nixosConfigurations.pinephone-nixos-cross-official = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./pinephone-configuration-cross-official.nix

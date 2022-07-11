@@ -3,43 +3,43 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1651851359,
-        "narHash": "sha256-Jh83w+gKjl9XS45SirPuvoavT7BhLcX7tvL58vdlHkM=",
-        "owner": "tomfitzhenry",
+        "lastModified": 1656299939,
+        "narHash": "sha256-gODt71CCv0gnMNeU4GYdSBJkxsfmBy0uNv8owQC1oPs=",
+        "owner": "NixOS",
         "repo": "mobile-nixos",
-        "rev": "2cdeca4b08081b0fadb04a26b3b95961f51ccdfe",
+        "rev": "de9a88a70f0ae5fc0839ff94bf29e8a30af399f8",
         "type": "github"
       },
       "original": {
-        "owner": "tomfitzhenry",
-        "ref": "pine64-pinephone-kernel-5.17",
+        "owner": "NixOS",
+        "ref": "master",
         "repo": "mobile-nixos",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1651939004,
-        "narHash": "sha256-2dlYo5/2l856gn+ln80am3Mr9Cqhv7ZYGJRzobksBRE=",
+        "lastModified": 1657532632,
+        "narHash": "sha256-uEwe1CAQxb0eOWIwxQ3zpMs/llshirlrCXZQz6vkYQU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "17c252aab1772d36acd6d3f57f6512f25b6f9e9c",
+        "rev": "85deee6d6c8127d360096a5caa0aeb876b976496",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "rev": "17c252aab1772d36acd6d3f57f6512f25b6f9e9c",
         "type": "github"
       }
     },
     "nixpkgs-cross-fork": {
       "locked": {
-        "lastModified": 1652159416,
-        "narHash": "sha256-47wgF/L3/7Wry+czQO3AnfAk1cuod1ht6BYTjE22XRU=",
+        "lastModified": 1654625429,
+        "narHash": "sha256-LlhCekri/vaZgMGQVDR9A5JXErSSR/jxXK4FnGqqNpQ=",
         "owner": "Mindavi",
         "repo": "nixpkgs",
-        "rev": "85a61dcd88f2e4145785bb756b79eaac85d03530",
+        "rev": "86ebd165b61d9ebe57d89c9e58c409829e19c6c1",
         "type": "github"
       },
       "original": {
@@ -49,28 +49,11 @@
         "type": "github"
       }
     },
-    "nixpkgs-cross-official": {
-      "locked": {
-        "lastModified": 1652995310,
-        "narHash": "sha256-9RHq6Gg/S7w4z7iQgyEeqrfSCSOm2w4X9BBYZDVhjY8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "35de448c4530c562bfd0d1c2a2d0bf76d1d4e468",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "mobile-nixos": "mobile-nixos",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-cross-fork": "nixpkgs-cross-fork",
-        "nixpkgs-cross-official": "nixpkgs-cross-official"
+        "nixpkgs-cross-fork": "nixpkgs-cross-fork"
       }
     }
   },
