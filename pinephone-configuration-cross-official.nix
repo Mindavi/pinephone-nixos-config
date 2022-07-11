@@ -21,10 +21,7 @@
   };
 
   # required for cross-compilation
-  #security.polkit.enable = lib.mkForce true;
-  #services.udisks2.enable = lib.mkForce true;
-  # May break proper audio from pulseaudio -- to check
-  security.rtkit.enable = lib.mkForce false;
+  services.udisks2.enable = lib.mkForce false;
 
   #documentation.enable = lib.mkOverride 5 true;  # breaks mobile-nixos imports
   networking.wireless.enable = false;
@@ -99,9 +96,9 @@
   services.openssh.enable = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #hardware.pulseaudio.enable = true;
 
-  hardware.bluetooth.enable = true;
+  #hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.sit0.useDHCP = true;
