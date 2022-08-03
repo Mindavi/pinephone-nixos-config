@@ -128,6 +128,6 @@
     openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
   };
 
-  system.stateVersion = "21.05";
+  system.stateVersion = "22.05";
 }
 
