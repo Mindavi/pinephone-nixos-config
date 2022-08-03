@@ -20,8 +20,7 @@
     # I don't think there's any need to change the id.
   };
 
-  # required for cross-compilation
-  services.udisks2.enable = lib.mkForce false;
+  #services.udisks2.enable = lib.mkForce false;
 
   #documentation.enable = lib.mkOverride 5 true;  # breaks mobile-nixos imports
   networking.wireless.enable = false;
@@ -96,9 +95,9 @@
   services.openssh.enable = true;
 
   sound.enable = true;
-  #hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = true;
 
-  #hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.sit0.useDHCP = true;
