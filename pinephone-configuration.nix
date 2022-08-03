@@ -57,7 +57,7 @@
     pkgs.wget
     pkgs.whois
     pkgs.tree
-    #pkgs.vim
+    pkgs.vim
 
     pkgs.pine64-pinephone.qfirehose
   ] ++ (with pkgs.plasma5Packages; [

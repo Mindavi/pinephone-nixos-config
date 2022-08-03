@@ -49,7 +49,7 @@
     pkgs.wget
     pkgs.whois
     pkgs.tree
-    #pkgs.vim
+    pkgs.vim
 
     pkgs.pine64-pinephone.qfirehose
   ];
@@ -58,7 +58,6 @@
     CHASSIS="handset"
   '';
 
-  #nixpkgs.config.contentAddressedByDefault = true;
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "arm-trusted-firmware-sun50i_a64"
     "pinephone-qfirehose"
