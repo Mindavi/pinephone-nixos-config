@@ -2,7 +2,8 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     nixpkgs-cross-fork.url = "github:Mindavi/nixpkgs/pinephone-patches-3";
 
     mobile-nixos.flake = false;
