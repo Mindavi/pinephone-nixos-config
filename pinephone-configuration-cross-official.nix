@@ -90,7 +90,7 @@
   users.groups.ntp = {};
   networking.hostName = "pinephone-nixos";
 
-  #services.dbus.packages = [ pkgs.callaudiod ];  # cross-compilation broken
+  services.dbus.packages = [ pkgs.callaudiod ];
 
   services.openssh.enable = true;
 
