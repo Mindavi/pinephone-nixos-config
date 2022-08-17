@@ -16,11 +16,18 @@
   };
 
   mobile.generatedFilesystems.rootfs = lib.mkDefault {
-    label = lib.mkForce "nixos-cross"; # explicitly different to prevent from booting from sd card into eMMC installed OS
+    # explicitly different to prevent from booting from sd card into eMMC installed OS
+    label = lib.mkForce "nixos-cross-minimal";
     # I don't think there's any need to change the id.
   };
 
-  #services.udisks2.enable = lib.mkForce false;
+  nixpkgs = {
+    #config.contentAddressedByDefault = true;
+    config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      #"arm-trusted-firmware-sun50i_a64"
+      "pine64-pinephone-firmware"
+    ];
+  };
 
   #documentation.enable = lib.mkOverride 5 true;  # breaks mobile-nixos imports
   networking.wireless.enable = false;
@@ -29,19 +36,16 @@
   environment.systemPackages = [
     pkgs.bc
     pkgs.cowsay
-    #pkgs.feh  # Doesn't cross-compile.
     pkgs.file
     pkgs.fzf
     pkgs.git
     pkgs.htop
     pkgs.jq
-    #pkgs.onboard
     pkgs.openssh
     pkgs.progress
     pkgs.rsync
     pkgs.screen
     pkgs.sl
-    #pkgs.squeekboard
     pkgs.st
     pkgs.usbutils
     pkgs.unzip
@@ -49,55 +53,23 @@
     pkgs.whois
     pkgs.tree
     pkgs.vim
-
-    pkgs.pine64-pinephone.qfirehose
   ];
 
   environment.etc."machine-info".text = ''
     CHASSIS="handset"
   '';
 
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "arm-trusted-firmware-sun50i_a64"
-    "pinephone-qfirehose"
-    "pine64-pinephone-firmware"
-  ];
-
-  #programs.sway = {
-  #  enable = true;
-  #  wrapperFeatures.gtk = true;
-  #  extraPackages = with pkgs; [
-  #    swaylock
-  #    swayidle
-  #    wl-clipboard
-  #    mako
-  #    alacritty
-  #    wofi
-  #  ];
-  #};
-
-  #programs.xwayland.enable = false;
-
-  #hardware.sensor.iio.enable = true;
   hardware.firmware = [ config.mobile.device.firmware ];
 
-  # global useDHCP flag is deprecated, let's set it to false
   networking.useDHCP = false;
 
   # ntp crashes on boot (maybe only when the time is 00:00 in 1980?)
   services.ntp.enable = true;
   users.users.ntp.group = "ntp";
   users.groups.ntp = {};
-  networking.hostName = "pinephone-nixos";
-
-  services.dbus.packages = [ pkgs.callaudiod ];
+  networking.hostName = "pinephone-nixos-cross-minimal";
 
   services.openssh.enable = true;
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.sit0.useDHCP = true;
@@ -115,9 +87,6 @@
 
   powerManagement.enable = true;
   services.upower.enable = true;
-
-  # disable to exclude mesa from the closure
-  #hardware.opengl.enable = true;
 
   time.timeZone = "Europe/Amsterdam";
 
