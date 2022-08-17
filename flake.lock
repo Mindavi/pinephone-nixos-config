@@ -19,32 +19,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1659558869,
-        "narHash": "sha256-1OKKEB42wQPQj9pR6tsBoRDCJMMah1wTuj42u6PjfM8=",
+        "lastModified": 1660759282,
+        "narHash": "sha256-MTmD5NaYLMeqNbz9VX5p3/Wwxii3ZY1OjXKLJ3VpV18=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2e221189de0b74f1472fb1249d48e1de5d639747",
+        "rev": "7b5c82c5181edfeace5e83f6889bbcc196f871b4",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-cross-fork": {
-      "locked": {
-        "lastModified": 1658869013,
-        "narHash": "sha256-A8/V372AFwMWa29HJnst/1WbKJ6623PBE5IYiXkOHPE=",
-        "owner": "Mindavi",
-        "repo": "nixpkgs",
-        "rev": "a6cc74da4b6df44f1fd1444ab470ad032559cc63",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mindavi",
-        "ref": "pinephone-patches-3",
+        "ref": "staging-next",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -52,8 +36,7 @@
     "root": {
       "inputs": {
         "mobile-nixos": "mobile-nixos",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-cross-fork": "nixpkgs-cross-fork"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
