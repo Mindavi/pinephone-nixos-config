@@ -28,6 +28,7 @@
       "pine64-pinephone-firmware"
     ];
   };
+  documentation.nixos.enable = false;
 
   #documentation.enable = lib.mkOverride 5 true;  # breaks mobile-nixos imports
   networking.wireless.enable = false;
