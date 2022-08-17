@@ -16,17 +16,17 @@
       modules = [ ./pinephone-configuration.nix ];
       specialArgs = { inherit mobile-nixos; };
     };
-    nixosConfigurations.pinephone-nixos-cross-official = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.pinephone-nixos-cross-minimal = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./pinephone-configuration-cross-official.nix
+        ./pinephone-configuration-cross-minimal.nix
         (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
       ];
     };
-    nixosConfigurations.pinephone-nixos-cross-fork = nixpkgs-cross-fork.lib.nixosSystem {
+    nixosConfigurations.pinephone-nixos-cross-full = nixpkgs-cross-full.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./pinephone-configuration-cross-fork.nix
+        ./pinephone-configuration-cross-full.nix
         (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
       ];
     };

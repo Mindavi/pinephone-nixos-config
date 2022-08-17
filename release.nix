@@ -5,36 +5,34 @@ let
     pkgs = pkgs';
   });
 
-  pp-config-official = (mobileReleaseTools.evalWith {
-    modules = [ ./pinephone-configuration-cross-official.nix ];
+  pp-config-minimal = (mobileReleaseTools.evalWith {
+    modules = [ ./pinephone-configuration-cross-minimal.nix ];
     device = "pine64-pinephone";
   });
 
-  pp-config-fork = (mobileReleaseTools.evalWith {
-    modules = [ ./pinephone-configuration-cross-fork.nix ];
+  pp-config-full = (mobileReleaseTools.evalWith {
+    modules = [ ./pinephone-configuration-cross-full.nix ];
     device = "pine64-pinephone";
   });
 
   # nixos config actually used on pinephone. ('final image')
-  pp-config-actual = (mobileReleaseTools.evalWith {
+  pp-config-real = (mobileReleaseTools.evalWith {
     modules = [ ./pinephone-configuration.nix ];
     device = "pine64-pinephone";
   });
 
-  pp-config-normal-eval = (import <nixpkgs/nixos/lib/eval-config.nix> {
+  pp-config-minimal-eval = (import <nixpkgs/nixos/lib/eval-config.nix> {
     system = "x86_64-linux";
     modules = [
-      ./pinephone-configuration-cross-official.nix
+      ./pinephone-configuration-cross-minimal.nix
       (import <mobile/lib/configuration.nix> { device = "pine64-pinephone"; })
     ];
   });
 
 in {
-  #official = pp-config-official;
-  official-image = pp-config-official.config.mobile.outputs.default;
-  #fork = pp-config-fork;
-  fork-image = pp-config-fork.config.mobile.outputs.default;
-  normal-image = pp-config-normal-eval.config.mobile.outputs.default;
-  #actual-image = pp-config-actual.config.mobile.outputs.default;
+  minimal-image = pp-config-minimal.config.mobile.outputs.default;
+  full-image = pp-config-full.config.mobile.outputs.default;
+  minimal-image2 = pp-config-minimal-eval.config.mobile.outputs.default;
+  #real-image = pp-config-real.config.mobile.outputs.default;
 }
 
