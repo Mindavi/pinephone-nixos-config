@@ -10,6 +10,11 @@
   };
 
   outputs = { self, nixpkgs, mobile-nixos }: {
+    nixosConfigurations.pp-rick = nixpkgs.lib.nixosSystem {
+      system = "aarch64-linux";
+      modules = [ ./pinephone-configuration-gnome.nix ];
+      specialArgs = { inherit mobile-nixos; };
+    };
     nixosConfigurations.pinephone-nixos = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       modules = [ ./pinephone-configuration.nix ];
