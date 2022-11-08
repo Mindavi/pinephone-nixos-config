@@ -153,8 +153,6 @@
 
   hardware.bluetooth.enable = true;
 
-  services.sshd.enable = true;
-
   networking.interfaces.eth0.useDHCP = true;
   networking.interfaces.sit0.useDHCP = true;
   networking.interfaces.wlan0.useDHCP = true;
