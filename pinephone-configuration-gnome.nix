@@ -1,0 +1,119 @@
+{ config, lib, pkgs, mobile-nixos, ... }:
+
+{
+  imports = [
+    (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
+    ./hardware-configuration.nix
+    "${mobile-nixos}/examples/phosh/phosh.nix"
+  ];
+
+  networking.hostName = "pp-rick";
+
+  environment.systemPackages = with pkgs; [
+    bat
+    ripgrep
+    fzf
+    pv
+
+    wget
+    vim
+    gitFull
+    htop
+    keepassxc
+    tree
+    jq
+    screen
+    file
+    p7zip
+
+    element-desktop
+    tdesktop
+
+    brightnessctl
+    cowsay
+
+    calls
+    chatty
+    gnome.gnome-chess
+    kgx
+    onboard
+    portfolio-filemanager
+    #sgtpuzzles-mobile
+    squeekboard
+    st
+
+    feh
+    gnome.eog
+
+    libsForQt5.calindori
+    libsForQt5.koko
+    #libsForQt5.spacebar
+  ];
+
+  environment.variables = {
+    # https://github.com/qt/qtbase/blob/ab28ff2207e8f33754c79793089dbf943d67736d/src/gui/kernel/qguiapplication.cpp#L1417-L1420
+    QT_QPA_PLATFORM = "wayland";
+    # https://invent.kde.org/plasma-mobile/angelfish/-/blob/049c78995fe6d7e0994f73f7b95fd33c65b41343/lib/settingshelper.cpp#L15
+    QT_QUICK_CONTROLS_MOBILE = "true";
+  };
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
+
+  services.openssh.enable = true;
+
+  #
+  # Opinionated defaults
+  #
+  
+  # Use Network Manager
+  networking.wireless.enable = false;
+  networking.networkmanager.enable = true;
+  
+  # Use PulseAudio
+  hardware.pulseaudio.enable = true;
+  
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
+  
+  # Bluetooth audio
+  hardware.pulseaudio.package = pkgs.pulseaudioFull;
+  
+  # Enable power management options
+  powerManagement.enable = true;
+  
+  # It's recommended to keep enabled on these constrained devices
+  zramSwap.enable = true;
+
+  # Auto-login for phosh
+  services.xserver.desktopManager.phosh = {
+    user = "rick";
+  };
+
+  #
+  # User configuration
+  #
+  
+  users.users."rick" = {
+    isNormalUser = true;
+    description = "rick";
+    hashedPassword = "$6$rOpjbuF0U68X.j8p$Xt5TSQjfp2tzcmxa2LX5GeTTn8NdL87DiCbsqxNz/ApZx5k.RgDE7Mv4Niqf3l3Nz2QeSoEutRlHohPcexPmu.";
+    extraGroups = [
+      "dialout"
+      "feedbackd"
+      "networkmanager"
+      "video"
+      "wheel"
+    ];
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHX8vXQQS3giFtiYf8rYkIAhKpQlc/2wNLj1EOvyfl9D4 rick@nixos-asus" ];
+  };
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "22.11"; # Did you read the comment?
+}
