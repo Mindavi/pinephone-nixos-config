@@ -3,7 +3,7 @@
 {
   imports = [
     (import "${mobile-nixos}/lib/configuration.nix" { device = "pine64-pinephone"; })
-    ./hardware-configuration.nix
+    ./hardware-configuration-gnome.nix
     "${mobile-nixos}/examples/phosh/phosh.nix"
   ];
 
