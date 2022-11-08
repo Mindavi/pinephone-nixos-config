@@ -2,8 +2,8 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs.url = "github:NixOS/nixpkgs/staging-next";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/staging-next";
 
     mobile-nixos.flake = false;
     mobile-nixos.url = "github:NixOS/mobile-nixos/master";
