@@ -35,8 +35,6 @@
     calls
     chatty
     gnome.gnome-chess
-    kgx
-    onboard
     portfolio-filemanager
     #sgtpuzzles-mobile
     squeekboard
