@@ -36,7 +36,7 @@
     chatty
     gnome.gnome-chess
     portfolio-filemanager
-    #sgtpuzzles-mobile
+    #sgtpuzzles-mobile  # adds load of apps to launcher
     squeekboard
     st
 
@@ -47,10 +47,10 @@
     firefox
     gnome.geary
     dino
-    fractal
+    #fractal
     nheko
 
-    freetube
+    #freetube  # unsupported
     youtube-dl
     pipe-viewer
     gtk-pipe-viewer
@@ -119,6 +119,9 @@
   };
 
   services.openssh.enable = true;
+  # Ensure gnome maps can access location via geoclue.
+  # Should probaly go into nixos/modules/services/x11/desktop-managers/phosh.nix.
+  services.geoclue2.appConfig."sm.puri.Phosh".isAllowed = true;
 
   nix = {
     settings = {
