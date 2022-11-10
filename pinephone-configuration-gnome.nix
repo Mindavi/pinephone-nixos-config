@@ -63,6 +63,39 @@
 
   services.openssh.enable = true;
 
+  nix = {
+    settings = {
+      sandbox = true;
+    };
+    extraOptions = ''
+      experimental-features = nix-command flakes ca-derivations
+      builders-use-substitutes = true
+      timeout = 86400  # 24 hours
+    '';
+  };
+
+  # e.g. platformio and element use this, so make sure this is enabled.
+  security.unprivilegedUsernsClone = true;
+
+  nixpkgs.config = {
+    # Even though it's not recommended, I'm going to enable this anyway.
+    # I like it to be a hard error when an attribute is renamed or whatever.
+    # Can always disable this again when it causes issues.
+    allowAliases = false;
+    #contentAddressedByDefault = true;
+  };
+
+  programs.bash.enableCompletion = true;
+
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      80
+      8080
+      5000
+    ];
+  };
+
   #
   # Opinionated defaults
   #
