@@ -42,9 +42,68 @@
 
     feh
     gnome.eog
+    vlc
 
+    firefox
+    gnome.geary
+    dino
+    fractal
+    nheko
+
+    freetube
+    youtube-dl
+    pipe-viewer
+    gtk-pipe-viewer
+    minitube
+
+    lollypop
+    amberol
+    spot
+
+    gnome-podcasts
+
+    gnome.gnome-sound-recorder
+
+    shortwave
+
+    lingot
+
+    CuboCore.coreimage
+
+    gnome.gnome-calendar
+    calcurse
+
+    gnome.gnome-contacts
+    goobook
+
+    gnome-usage
+
+    CuboCore.corestats
+
+    evince
+    CuboCore.corepdf
+
+    numberstation
+
+    gnome.gnome-calculator
+
+    pure-maps
+    gnome.gnome-maps
+    mepo
+
+    libsForQt5.pix
     libsForQt5.calindori
     libsForQt5.koko
+    libsForQt5.ark
+    libsForQt5.nota
+    libsForQt5.kweather
+    libsForQt5.kasts
+    #libsForQt5.plasma-phonebook
+    libsForQt5.kclock
+    libsForQt5.angelfish
+    libsForQt5.keysmith
+    libsForQt5.krecorder
+    # interferes with other sms apps (receives sms duplicated)
     #libsForQt5.spacebar
   ];
 
