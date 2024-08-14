@@ -9,7 +9,7 @@
     settings = {
       sandbox = true;
     };
-    package = pkgs.nixUnstable;
+    #package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
