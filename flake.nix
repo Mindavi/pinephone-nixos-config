@@ -3,10 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    #nixpkgs.url = "github:NixOS/nixpkgs/staging-next";
 
     mobile-nixos.flake = false;
-    mobile-nixos.url = "github:NixOS/mobile-nixos/master";
+    mobile-nixos.url = "github:mobile-nixos/mobile-nixos/master";
   };
 
   outputs = { self, nixpkgs, mobile-nixos }: {
