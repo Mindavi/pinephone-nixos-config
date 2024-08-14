@@ -5,7 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     mobile-nixos.flake = false;
-    mobile-nixos.url = "github:mobile-nixos/mobile-nixos/master";
+    mobile-nixos.url = "github:mobile-nixos/mobile-nixos/development";
   };
 
   outputs = { self, nixpkgs, mobile-nixos }: {
