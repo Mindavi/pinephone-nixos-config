@@ -83,6 +83,16 @@
     ];
   };
 
+  services.xserver = {
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+    };
+    desktopManager.gnome = {
+      enable = true;
+    };
+  };
+
   #programs.xwayland.enable = false;
 
   #hardware.sensor.iio.enable = true;
