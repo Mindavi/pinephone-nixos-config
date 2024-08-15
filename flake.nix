@@ -2,7 +2,9 @@
   description = "Pinephone NixOS config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # Temporary for now: https://github.com/mobile-nixos/mobile-nixos/issues/734#issuecomment-2272582716
+    nixpkgs.url = "github:NixOS/nixpkgs/9f4128e00b0ae8ec65918efeba59db998750ead6";
 
     mobile-nixos.flake = false;
     mobile-nixos.url = "github:mobile-nixos/mobile-nixos/development";
