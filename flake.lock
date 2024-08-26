@@ -3,33 +3,33 @@
     "mobile-nixos": {
       "flake": false,
       "locked": {
-        "lastModified": 1723667452,
-        "narHash": "sha256-j++MdJ7vl9U+GXPr4DVVC9qpdIzoUUKVdxbqhA4D9t4=",
-        "owner": "mobile-nixos",
+        "lastModified": 1724137347,
+        "narHash": "sha256-6rjxIm1bSYWY5NgX2ts7QXQeFNrGGkGAIZQFc1/UsC8=",
+        "owner": "Luflosi",
         "repo": "mobile-nixos",
-        "rev": "da892ce73d691f8fa5869d7cdc721f8ec98db872",
+        "rev": "3f47815441c7e88d016e6760769e5062b3a58627",
         "type": "github"
       },
       "original": {
-        "owner": "mobile-nixos",
-        "ref": "development",
+        "owner": "Luflosi",
+        "ref": "un-collide-eg25-manager",
         "repo": "mobile-nixos",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1720031269,
-        "narHash": "sha256-rwz8NJZV+387rnWpTYcXaRNvzUSnnF9aHONoJIYmiUQ=",
+        "lastModified": 1724395761,
+        "narHash": "sha256-zRkDV/nbrnp3Y8oCADf5ETl1sDrdmAW6/bBVJ8EbIdQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9f4128e00b0ae8ec65918efeba59db998750ead6",
+        "rev": "ae815cee91b417be55d43781eb4b73ae1ecc396c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
-        "rev": "9f4128e00b0ae8ec65918efeba59db998750ead6",
         "type": "github"
       }
     },
