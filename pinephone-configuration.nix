@@ -152,8 +152,6 @@
     enable = true;
     audio.enable = true;
   };
-  hardware.pulseaudio.enable = true;
-
   hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
