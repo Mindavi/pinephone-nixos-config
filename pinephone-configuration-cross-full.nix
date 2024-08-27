@@ -110,10 +110,10 @@
 
   services.openssh.enable = true;
 
-  services.pipewire = {
-    enable = true;
-    audio.enable = true;
-  };
+  #services.pipewire = {
+  #  enable = true;
+  #  audio.enable = true;
+  #};
   hardware.bluetooth.enable = true;
 
   networking.interfaces.eth0.useDHCP = true;
